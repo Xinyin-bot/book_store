@@ -34,8 +34,8 @@ class _DetailScreenState extends State<DetailScreen> {
         appBar: AppBar(
           title: Text('Book Details'),
         ),
-        body:Column(
-      children: [
+        body:SingleChildScrollView(child:Column(      
+          children: [
         SizedBox(height:10),
         Text(book.bookTitle, textAlign: TextAlign.center, style: TextStyle(
           fontSize:25, fontWeight: FontWeight.bold),),
@@ -53,14 +53,26 @@ class _DetailScreenState extends State<DetailScreen> {
                 size: screenWidth / 2,
               ),
             )),
-            SizedBox(height:10),
+            
+        Text("Price: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
         Text("RM " + book.price, textAlign: TextAlign.center),
-        Text("Description: " + book.description, textAlign: TextAlign.center),
-        Text("Author: " + book.author, textAlign: TextAlign.center),
-        Text("Rating: " + book.rating, textAlign: TextAlign.center),
-        Text("Publisher: " + book.publicher, textAlign: TextAlign.center),
-        Text("ISBN: " + book.ISBN, textAlign: TextAlign.center),
-      ],
+        SizedBox(height: 7),
+        Text("Description: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(book.description, textAlign: TextAlign.center),
+        SizedBox(height: 7),
+        Text("Author: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(book.author, textAlign: TextAlign.center),
+        SizedBox(height: 7),
+        Text("Rating: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(book.rating, textAlign: TextAlign.center),
+        SizedBox(height: 7),
+        Text("Publisher: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(book.publicher, textAlign: TextAlign.center),
+        SizedBox(height: 7),
+        Text("ISBN: ", textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold),),
+        Text(book.ISBN, textAlign: TextAlign.center),
+      ],)
+
     ),
     ),
     );
